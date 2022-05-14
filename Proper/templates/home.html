@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <a href="{% url 'login' %} "> login</a>
+  <a href="{% url 'logout' %} "> logout</a>
+    <h1>welcome ,This is Homepage</h1>
+    {% for mineral in minerals %}
+    {{request.user.username}}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ mineral.image.url }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ mineral.name }}</h5>
+    <p class="card-text">{{ mineral.description }}</p>
+    <p class="card-text">Price - {{ mineral.price }}</p>
+    <a href="{% url 'buy' mineral.price mineral.id %}" class="btn btn-primary">Buy Now</a>
+  </div>
+</div>
+{% endfor %}
+</body>
+</html>
