@@ -6,19 +6,19 @@ from .forms import BuyerForm
 
 # Create your views here.
 
-def home(request):
+def index(request):
     mineral = Mineral.objects.all()
     context = {
         'minerals': mineral}
-    return render(request, 'home.html', context)
+    return render(request, 'index.html', context)
     
 
-def index(request,amount):
+def home(request):
     buyer = Buyer.objects.all()
     form = BuyerForm()
-    form.amount = amount
+    
     context = {'form': form}
-    return render(request, 'index.html', context)
+    return render(request, 'home.html', context)
 
 
 
