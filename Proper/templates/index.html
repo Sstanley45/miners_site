@@ -10,7 +10,39 @@
 
     <title>Home Page!</title>
     <style>
-      .div-center{
+     body{
+      /* background-color: #212121; */
+      /* background-image: url(media/images/diamond.jpg); */
+      color: white;
+      margin: 0;
+      padding: 0;
+      font-size: 30px;
+    }
+    .mycontainer{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      animation: animate 26s ease-in-out infinite;
+      background-size: cover;
+    }
+    @keyframes animate{
+      0%,100%{
+        background-image: url(media/images/minera1.jpg);
+      }
+      25%{
+        background-image: url(media/images/mineral-site.jpg);
+      }
+      50%{
+        background-image: url(media/images/mineral-site2.jpg);
+      }
+      75%{
+        background-image: url(media/images/mineral-site3.jpg);
+      }
+    } 
+
+    .div-center{
         margin-top: 80px;
       }
       .btn-center{
@@ -22,14 +54,35 @@
         color: green;
       }
       #title-header{
-        font-size: 30px;
+        font-size: 40px;
         padding: 5px;
         border-right: solid;
         border-left: solid;
       }
+      .readmore-btn{
+        font-style: oblique;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        text-shadow: 2px 2px black;
+      }
+      nav{
+        position: fixed;
+      }
+      .header-font{
+        font-size: 40px;
+        text-shadow:1px 1px black ;
+      }
+      .main-header{
+        text-indent: 50px;
+        color:white;
+        font-weight: 700;
+        font-size: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
     </style>
   </head>
   <body>
+<div class="mycontainer">
 
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#"><span id="title-header">A  Mining Platform </span></a>
@@ -55,18 +108,24 @@
           </ul>
           </div>
       </nav>
-      
-      <div class="justify-content-center div-center">
-        <h1 class="text-center">Mining is the Art of Exploiting Minerals Deposits at a Profit</h1>
-        <h2 class="text-center">An unprofitable mine is fit only for the sepulcher of a dead mule "T.A Richkard" </h2>
-        <h3 class="text-center font-italic">"All Creation Is a Mine and every Man a Miner" ~ Abraham Lincoln</h3>
-      </div>
 
-      <button class = "btn btn-outline btn-info btn-center div-center">
-        Read More
-      </button>
-   
+        <div class="justify-content-center div-center">
+          <h1 class="header-font main-header">Join Us Today!!</h1>
+          <h2 class="text-center header-font">Mining is the Art of Exploiting Minerals Deposits at a Profit</h2>
+          <h3 class="text-center header-font">An unprofitable mine is fit only for the sepulcher of a dead mule "T.A Richkard" </h3>
+          <h4 class="text-center font-italic">"All Creation Is a Mine and every Man a Miner" ~ Abraham Lincoln</h4>
+        </div>
 
+        <button  onclick="btnFunction()" class = "btn btn-outline btn-info btn-center div-center">
+          Discover More
+        </button>
+        <br>
+        <br>
+        <p id="btn-readmore" class="text-center readmore-btn"></p>
+
+
+</div>      
+     
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -79,11 +138,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     -->
   </body>
-  <style>
-    body{
-      /* background-color: #212121; */
-      background-image: url(media/images/diamond.jpg);
-      color: white;
+  
+  <script>
+    function btnFunction(){
+      document.getElementById('btn-readmore').innerHTML="The earliest known mine for a specific mineral is coal form South Africa, appearing worked 40,000 to 20,000 years ago but ming did not become a significant industry untill more advanced civilizations developed 10,000 to 7,000 years ago"
     }
-  </style>
+  </script>
 </html>
